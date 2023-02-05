@@ -39,10 +39,11 @@ class Student {
     String name;
     int age;
 
-    // final is a keyword in JAVA which are used where we can't modified the data
+    /** final is a keyword in JAVA which are used where we can't modified the data
+     */
     final double raise = 5.0f;
 
-    /*
+    /**
         Constructors:
         we need  a way to add the values of the above properties object by object
         we need one word to access every object
@@ -54,8 +55,8 @@ class Student {
         this.age = age;
     }
 
-    /*
-        Constructor overloading
+    /**
+        Constructor overloading:
         passing an object to a constructor
      */
 
@@ -65,7 +66,7 @@ class Student {
         this.age = other.age;
     }
 
-    /*
+    /**
         constructor inside a constructor
      */
 
@@ -75,8 +76,8 @@ class Student {
         this (0, "name", 0);
     }
 
-    /*
-        Garbage collection
+    /**
+        Garbage collection:
         Acts as a destroyer and removes the object from the memory
     */
 
