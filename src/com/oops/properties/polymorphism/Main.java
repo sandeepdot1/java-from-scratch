@@ -8,8 +8,8 @@ public class Main {
         Square sq = new Square();
 
         /**
-         * Method Overriding: this will call the area method present in triangle at runtime
-         */
+            Method Overriding: this will call the area method present in triangle at runtime
+        */
         sh.area();
     }
 }

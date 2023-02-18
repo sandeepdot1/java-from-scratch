@@ -39,7 +39,7 @@ class Student {
     String name;
     int age;
 
-    /** final is a keyword in JAVA which are used where we can't modified the data
+    /** final is a keyword in JAVA which are used where we can't modify the data
      */
     final double raise = 5.0f;
 
