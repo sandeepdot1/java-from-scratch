@@ -39,4 +39,37 @@ public class RecursionBasics {
             return pow*pow;
         }
     }
+
+    static void printReverse(int i, String word) {
+        if(i == word.length()) {
+            return;
+        }
+        printReverse(i+1, word);
+        System.out.println(word.charAt(i));
+    }
+
+    static void stringOccurance(int first, int last, int idx, char key, String str) {
+        if(idx == str.length()) {
+            System.out.println(key + "occured first at index " + first + " and last at index " + last);
+            return;
+        }
+        if(str.charAt(idx) == key) {
+            last = idx;
+            if(first == -1) first = idx;
+        } 
+        stringOccurance(first, last, idx+1, key, str);
+    }
+
+    static boolean isSorted(int idx, int[] arr) {
+        if(idx == arr.length-1) {
+            return true;
+        }
+        if(arr[idx] > arr[idx+1]) {
+            return false;
+        }
+        if(isSorted(idx+1, arr) == false) {
+            return false;
+        }
+        else return true;
+    }
 }
