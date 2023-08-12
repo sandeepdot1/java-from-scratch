@@ -72,4 +72,58 @@ public class RecursionBasics {
         }
         else return true;
     }
+
+     static void moveLast(int ind, char key, int count, char[] str) {
+        if(ind == str.length) {
+            return;
+        }
+        if(str[ind] == key) count++;
+        else {
+            char temp = str[ind];
+            str[ind] = str[ind-count];
+            str[ind-count] = temp;
+        }
+        moveLast(ind+1, key, count, str);
+    }
+
+    static void removeDuplicates(int ind, String str, boolean[] arr, String newStr) {
+        if(ind == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+        if(arr[str.charAt(ind)-'a'] == false) {
+            newStr += str.charAt(ind);
+            arr[str.charAt(ind)-'a'] = true;
+        }
+        removeDuplicates(ind+1, str, arr, newStr);   
+    }
+
+    static void printSubsequences(int ind, String temp, String str) {
+        if(ind == str.length()) {
+            if(temp.length() == 0) System.out.println("{}");
+            else System.out.println(temp);
+            return;
+        }
+        // not pick
+        printSubsequences(ind+1, temp, str);
+        
+        // pick
+        temp += str.charAt(ind);
+        printSubsequences(ind+1, temp, str);
+    }
+
+    static void printUniqueSubsequence(int ind, String str, String newStr) {
+        System.out.println(newStr);
+        HashSet<Character> set = new HashSet<>(); 
+        for(int i = ind; i < str.length(); i++) {
+            if(set.contains(str.charAt(i))) {
+                continue;
+            }
+            else {
+                set.add(str.charAt(i));
+                String newString = newStr + str.charAt(i);
+                printUniqueSubsequence(i+1, str, newString);
+            }
+        }
+    }
 }
